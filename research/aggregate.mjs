@@ -22,7 +22,7 @@ for (const f of lines.filter((l) => l.b && l.t >= open.t)) {
     ev.push({ t: f.t, dir: "u", name: NAME[o[0]] || `#${o[0]}`, m });
   }
 }
-writeFileSync("decoded-session.jsonl", ev.map((e) => JSON.stringify(e)).join("\n"));
+writeFileSync(process.env.OUT || "decoded-session.jsonl", ev.map((e) => JSON.stringify(e)).join("\n"));
 const self = ev.find((e) => e.name === "ResetYourState")?.m?.yourTank;
 const up = ev.filter((e) => e.dir === "u");
 const pct = (n) => (100 * n).toFixed(1) + "%";

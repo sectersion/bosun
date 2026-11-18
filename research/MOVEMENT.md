@@ -55,11 +55,25 @@ Server-observed travel lags claims slightly (13.3 vs 15.0) = echo smoothing/inte
 Observed curiosity: server re-sent `ResetYourState` (spawn event) right at arrival — cadence
 of those is unexplained (periodic re-anchor? idle-timeout related?); harmless, worth watching.
 
-Remaining movement frontier: **aboard-ship semantics** (relativeToId=shipActorId, coords
-become ship-relative, vessel world-motion owned by helmsman? — the sailing model).
+## SAILING SOLVED 2026-11-18 (guided capture #2, session-2 forensics)
 
-## Still to determine (older list)
-- [ ] **On-foot-only** episode: exact walk/swim speed envelope + frame transitions (enter/exit water, board/disembark sequence)
-- [ ] **Ship-helming**: who claims the ship's world position — helmsman's MyTankMessage? Does an unmanned ship drift?
-- [ ] CSCollision validation tolerance (can a bogus hit be declared? — research-only, don't)
-- [ ] interp 1..5 role at tick boundaries (buffer slot for send-side smoothing?)
+**Propulsion = an interact, not a command field.** On the sloop (tankType 1):
+
+1. Stand at deck **(0.4, 4.1, -5.5)** (mast, ship-relative coords)
+2. Claim with **`interactingWithIndex: 0, interactableActorId: <shipId>, animationState: 22`**
+   — tap-hold F; `interactionVector` stays empty (a toggle, not a rope-pull)
+3. ~3 s later (sail-drop animation) the hull accelerates along its `rotationY` at
+   ~1.1–3.5 u/s; helming = camera yaw, rider `animationState: 7`, `vehiclePositionIndex: 0` = helm seat
+4. `interactingWithIndex: 3` + rising `interactionVector.y` (→0.79) = **anchor windlass**
+   (sustained pull) — not required to get moving; `ii=1` = other mast interactable
+5. The rider never writes the ship's world coords — server physics carries the hull from
+   yaw + sails. Bundle: `interactWithShipOrIslandThing()` (F-key + nearest interactable).
+
+Live proof: `sail-live.js` bot **sailed 143u of a 150u order** (429 claims, arrived in
+radius); `bot.sailTo()` auto-lowers sails; trail in `sail-trail.svg`.
+
+## Still to determine
+- [ ] Unmanned-ship behavior (drift? stop?), multi-seat ships (cannon crew seats)
+- [ ] Hull taxonomy: sail/deck positions for larger tankTypes (15+)
+- [ ] CSCollision validation tolerance (research-only — do not probe maliciously)
+- [ ] Mystery periodic `ResetYourState` re-anchors mid-idle (every ~2 min?)
