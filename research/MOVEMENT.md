@@ -38,7 +38,27 @@ Firing origin `x/y/z` is ship-relative with `relativeToId` set; `id` is a random
   ship states include 7; sail-work likely 20/22/23 — unlabeled).
 - Full decode pipeline: `analyze.mjs` (timeline) + `aggregate.mjs` (stats); collector `collect.js`.
 
-## Still to determine (next capture sessions — dedicated modes)
+## VALIDATED 2026-11-18 — walk engine live (`lib/movement.js`, proof: `research/walk-live.js`)
+
+**The bare claim was the whole bug.** `MyTankMessage` claims must ALWAYS carry the
+coordinate-frame declaration — a bare `{id,x,y,z}` is silently discarded into the void
+(not rubber-banded, not answered):
+
+```
+relativeToId: 2^48-1 (WORLD) | relativeToVehicleId: 2^48-1 | vehiclePositionIndex: 0
+interactingWithIndex: -1 | interactionVector: {} | interpolationIndex: 1..5 cycling
+animationState: 11 = standing, 17 = walking | rotationY = heading | antiAfk bit
+```
+
+Result: 15u walked at 3.6 u/s, 47 claims, **0 corrections** — server relays every step.
+Server-observed travel lags claims slightly (13.3 vs 15.0) = echo smoothing/interest, not rejection.
+Observed curiosity: server re-sent `ResetYourState` (spawn event) right at arrival — cadence
+of those is unexplained (periodic re-anchor? idle-timeout related?); harmless, worth watching.
+
+Remaining movement frontier: **aboard-ship semantics** (relativeToId=shipActorId, coords
+become ship-relative, vessel world-motion owned by helmsman? — the sailing model).
+
+## Still to determine (older list)
 - [ ] **On-foot-only** episode: exact walk/swim speed envelope + frame transitions (enter/exit water, board/disembark sequence)
 - [ ] **Ship-helming**: who claims the ship's world position — helmsman's MyTankMessage? Does an unmanned ship drift?
 - [ ] CSCollision validation tolerance (can a bogus hit be declared? — research-only, don't)

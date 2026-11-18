@@ -34,14 +34,17 @@ not for synthetic position-only clients.
 - **Simulating your own tank** — runs **Jolt Physics compiled to WASM in the browser**
   (`jolt.GetPhysicsSystem`, `JoltWasmMemoryLogger`, `physics.wasm`) and reports the result
   every tick in `MyTankMessage(5)`: position, rotations, turret direction, animation
-  states, vehicle/passthrough state. **Probe result (movement + combat + items domains):
-  the server does NOT relay a fresh guest's reported positions at all** — every
-  position-claim is answered with `ResetYourState(2)` re-anchoring the actor to its spawn
-  snapshot (verified across gradual +1-unit sails and +120/+300 teleports, 3 spawn points,
-  both the claimed "global tick index" and per-actor `interpolationIndex`; ~185–250 reports
-  per run, zero accepted; `interpolationIndex` frozen at 1, `forcePosition=false`).
-  The relay presumably engages only once the actor is in the real client-spawned,
-  physics-consistent state (ship driven / velocity-continuous Jolt sim) — unconfirmed.
+  states, vehicle/passthrough state. **CORRECTED (validated 2026-11-18 via live capture +
+  `lib/movement.js`): the server DOES relay client position claims** — walk-speed ones, at
+  least. An earlier probe concluded "positions are discarded" but it was wrong for two
+  compounding reasons: (1) claims were sent **without the coordinate-frame fields**
+  (`relativeToId`, `relativeToVehicleId`, `vehiclePositionIndex`, `interactingWithIndex`,
+  `interactionVector`) so the server silently voids them, and (2) the test *speeds* (+30
+  u/s teleports) were 3-10× the observed envelope. A well-formed on-foot claim at ≤~4 u/s
+  walks the actor with **zero rubber-banding** (47/47 claims accepted). Bare `{id,x,y,z}`
+  and out-of-envelope jumps are both discarded (no explicit reject — just no relay), which
+  is why the earlier probe read it as "client authority denied." `suspectedHacking(9)` is
+  not triggered by naive position probes.
 - **Reconciliation**: tells the server `interpolation_index` (which snapshot its reported
   position was rendered at — enables lag-compensated hit checks); buffers incoming
   snapshots and interpolates (`InterpolationVarsTick`, `lastInterpolationTimeToAchieve`,
@@ -121,9 +124,9 @@ Unknowns to test first (from a `file://` or `http://localhost` page):
 2. Does the server reject a spoofed-but-stale `client_version` / `version:1` mismatch?
 3. Multiple simultaneous sessions on the same id — use a *separate* guest id for experiments.
    (Probes always used fresh guest ids; several guests concurrently on one server works.)
-4. **The accepted movement input channel** — position claims in `MyTankMessage` are discarded
-   for fresh guests (verified, movement domain); a write-capable custom client must first
-   reproduce it (velocity-continuity? real ship spawn?). Read-only telemetry needs none of this.
+4. ~~The accepted movement input channel~~ **RESOLVED 2026-11-18**: well-formed `MyTankMessage`
+   claims (frame fields present, ≤~4 u/s) are relayed; `lib/movement.js` walks on this.
+   Aboard-ship claims (relativeToId=ship) are the remaining frontier — the sailing model.
 
 Housekeeping, stated once: as of 2026-11-16 saltyseas.io publishes **no ToS at all** (probed
 terms/rules/eula → 404; only a privacy policy exists). So protocol use breaches no published

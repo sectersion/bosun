@@ -30,7 +30,7 @@ No build/lint/test suite — the live probes ARE the tests; run them to validate
 
 - `lib/world.js` `WorldModel` — socket-free, evented actor registry. `apply(name,msg)` merges full-state snapshots / optional-field deltas / `actorsToRemove` despawns (null=clear, absent=unchanged) and emits `spawn/tick/actorAppear/actorMoved/actorGone/chat/event/explosion/damage/scores/crew`. Queries: `humans()/islands()/vessels()/traders()/nearestFrom()/positionOf()` (resolves vehicle-relative chain; ignores parent rotation — see ponytail note).
 - `lib/bot.js` `Bot`/`createBot` — WorldModel wired to a live `GameClient`, plus first verbs (`spawn`, `chat`). This is the layer users build on; probes/scripts below it use raw `GameClient`.
-- Movement is intentionally NOT in this layer yet (next milestone). `research/MOVEMENT.md` has the cracked model (client-declared positions at walk speed ~4 u/s are trusted; our old 30 u/s was why it failed).
+- Movement is implemented for on-foot: `lib/movement.js` `Walker` + `bot.walkTo({x,z})`. **The claim shape IS the contract — omitting coordinate-frame fields (`relativeToId`, `relativeToVehicleId`, `vehiclePositionIndex`, `interactingWithIndex`, `interactionVector`) makes the server silently void every claim; and claims above ~4 u/s get discarded (no rubber-band, no error).** `research/walk-live.js` is the live proof; `research/MOVEMENT.md` "VALIDATED" has the full shape. Aboard-ship/sailing claims are NOT implemented (next milestone).
 
 ## Critical context
 
