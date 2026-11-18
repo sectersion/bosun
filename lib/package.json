@@ -1,0 +1,14 @@
+{
+  "name": "bosun",
+  "version": "0.1.0",
+  "description": "Unofficial Node.js client library + protocol documentation for the Salty Seas (saltyseas.io) game API",
+  "type": "module",
+  "main": "index.js",
+  "engines": { "node": ">=22" },
+  "keywords": ["salty-seas", "game-api", "reverse-engineering", "protobuf", "websocket", "unofficial"],
+  "license": "MIT",
+  "dependencies": {
+    "lz4js": "^0.2.0",
+    "protobufjs": "^8.8.1"
+  }
+}

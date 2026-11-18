@@ -1,0 +1,2674 @@
+{
+ "domain": "movement",
+ "server": {
+  "serverId": 5,
+  "serverName": "Server 5",
+  "playerCount": 8,
+  "maxPlayerCount": 250
+ },
+ "initTank": {
+  "id": 2538362723423,
+  "username": "guest_199826",
+  "x": 21.630619049072266,
+  "y": 4.692139148712158,
+  "z": -0.6295608282089233,
+  "rotationX": 0,
+  "rotationY": 3.4796860218048096,
+  "rotationZ": 0,
+  "turretDirectionX": 0,
+  "turretDirectionY": 0,
+  "turretDirectionZ": 0,
+  "interpolationIndex": 1,
+  "health": 10,
+  "isDead": false,
+  "tankType": 0,
+  "animationState": 11,
+  "heldWeapon": 4,
+  "animationState_2": 14,
+  "gid": "a47f136e6056154e",
+  "relativeToId": 281474976710655,
+  "interactingWithIndex": -1,
+  "skin": 12,
+  "groupId": 881216224368,
+  "relativeToVehicleId": 281474976710655,
+  "characterMesh": 11,
+  "classification": 0,
+  "carriedItemId": 281474976710655,
+  "heldBy": {
+   "holderId": 281474976710655
+  }
+ },
+ "resetYourStateTotal": 303,
+ "resetYourStateSamples": [
+  {
+   "phase": "boot",
+   "forcePosition": false,
+   "x": 21.630619049072266,
+   "z": -0.6295608282089233,
+   "actorInterp": 1,
+   "heldBy": true,
+   "animationState": 11,
+   "lastSentX": null,
+   "count": 1
+  },
+  {
+   "phase": "settle",
+   "forcePosition": false,
+   "x": 21.630619049072266,
+   "z": -0.6295608282089233,
+   "actorInterp": 1,
+   "heldBy": true,
+   "animationState": 11,
+   "lastSentX": 23.630619049072266,
+   "count": 165
+  },
+  {
+   "phase": "sail-global-interp",
+   "forcePosition": false,
+   "x": 21.630619049072266,
+   "z": -0.6295608282089233,
+   "actorInterp": 1,
+   "heldBy": true,
+   "animationState": 11,
+   "lastSentX": 188.63061904907227,
+   "count": 37
+  },
+  {
+   "phase": "sail-actor-interp-rich",
+   "forcePosition": false,
+   "x": 21.630619049072266,
+   "z": -0.6295608282089233,
+   "actorInterp": 1,
+   "heldBy": true,
+   "animationState": 11,
+   "lastSentX": 302.63061904907227,
+   "count": 38
+  },
+  {
+   "phase": "hold-after",
+   "forcePosition": false,
+   "x": 21.630619049072266,
+   "z": -0.6295608282089233,
+   "actorInterp": 1,
+   "heldBy": true,
+   "animationState": 11,
+   "lastSentX": 410.63061904907227,
+   "count": 18
+  },
+  {
+   "phase": "teleport-120",
+   "forcePosition": false,
+   "x": 21.630619049072266,
+   "z": -0.6295608282089233,
+   "actorInterp": 1,
+   "heldBy": true,
+   "animationState": 11,
+   "lastSentX": 410.63061904907227,
+   "count": 23
+  },
+  {
+   "phase": "teleport-300",
+   "forcePosition": false,
+   "x": 21.630619049072266,
+   "z": -0.6295608282089233,
+   "actorInterp": 1,
+   "heldBy": true,
+   "animationState": 11,
+   "lastSentX": 321.63061904907227,
+   "count": 21
+  }
+ ],
+ "eventSamples": [
+  {
+   "phase": "boot",
+   "msg": {
+    "primary": "You have been respawned"
+   },
+   "lastSentX": null
+  }
+ ],
+ "disconnectReason": null,
+ "serverConstantsKeys": [
+  "cannonBallProps",
+  "tankStats",
+  "islands",
+  "characterMeshUnlocks",
+  "mapLandmarks"
+ ],
+ "allBotPositionsSample": null,
+ "selfFoundInWorld": 0,
+ "movementUnlocked": false,
+ "unlock": null,
+ "spawnAnchor": {
+  "x": 21.630619049072266,
+  "z": -0.6295608282089233,
+  "actorInterp": 1
+ },
+ "selfEchoInWorld": {
+  "worldTicks": 331,
+  "selfFound": 1,
+  "actorInterpSeries": [
+   1
+  ],
+  "lastDelta": null,
+  "examples": []
+ },
+ "worldTicks": [
+  {
+   "t": 1794877042644,
+   "index": 3092232,
+   "lowFreq": true,
+   "full": true,
+   "tanks": 153
+  },
+  {
+   "t": 1794877042679,
+   "index": 3092233,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877042781,
+   "index": 3092234,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877042913,
+   "index": 3092235,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877043018,
+   "index": 3092236,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 129
+  },
+  {
+   "t": 1794877043118,
+   "index": 3092237,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877043178,
+   "index": 3092238,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877043284,
+   "index": 3092239,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 50
+  },
+  {
+   "t": 1794877043382,
+   "index": 3092240,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 128
+  },
+  {
+   "t": 1794877043479,
+   "index": 3092241,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 50
+  },
+  {
+   "t": 1794877043597,
+   "index": 3092242,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 50
+  },
+  {
+   "t": 1794877043678,
+   "index": 3092243,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877043802,
+   "index": 3092244,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 130
+  },
+  {
+   "t": 1794877043879,
+   "index": 3092245,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 50
+  },
+  {
+   "t": 1794877044007,
+   "index": 3092246,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 50
+  },
+  {
+   "t": 1794877044075,
+   "index": 3092247,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877044219,
+   "index": 3092248,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 127
+  },
+  {
+   "t": 1794877044275,
+   "index": 3092249,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877044382,
+   "index": 3092250,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877044480,
+   "index": 3092251,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877044582,
+   "index": 3092252,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 127
+  },
+  {
+   "t": 1794877044684,
+   "index": 3092253,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877044784,
+   "index": 3092254,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877044879,
+   "index": 3092255,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877044985,
+   "index": 3092256,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 128
+  },
+  {
+   "t": 1794877045083,
+   "index": 3092257,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877045201,
+   "index": 3092258,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877045280,
+   "index": 3092259,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877045402,
+   "index": 3092260,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 126
+  },
+  {
+   "t": 1794877045475,
+   "index": 3092261,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877045606,
+   "index": 3092262,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 46
+  },
+  {
+   "t": 1794877045675,
+   "index": 3092263,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877045809,
+   "index": 3092264,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 127
+  },
+  {
+   "t": 1794877045922,
+   "index": 3092265,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877045992,
+   "index": 3092266,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877046076,
+   "index": 3092267,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877046177,
+   "index": 3092268,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 125
+  },
+  {
+   "t": 1794877046277,
+   "index": 3092269,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877046417,
+   "index": 3092270,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877046518,
+   "index": 3092271,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 49
+  },
+  {
+   "t": 1794877046583,
+   "index": 3092272,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 125
+  },
+  {
+   "t": 1794877046692,
+   "index": 3092273,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 50
+  },
+  {
+   "t": 1794877046778,
+   "index": 3092274,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 50
+  },
+  {
+   "t": 1794877046901,
+   "index": 3092275,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 48
+  },
+  {
+   "t": 1794877046986,
+   "index": 3092276,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 124
+  },
+  {
+   "t": 1794877047109,
+   "index": 3092277,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877047181,
+   "index": 3092278,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 47
+  },
+  {
+   "t": 1794877047322,
+   "index": 3092279,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 46
+  },
+  {
+   "t": 1794877047381,
+   "index": 3092280,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 124
+  },
+  {
+   "t": 1794877047479,
+   "index": 3092281,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877047576,
+   "index": 3092282,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877047685,
+   "index": 3092283,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877047785,
+   "index": 3092284,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 124
+  },
+  {
+   "t": 1794877047930,
+   "index": 3092285,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877047988,
+   "index": 3092286,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877048086,
+   "index": 3092287,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877048197,
+   "index": 3092288,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 122
+  },
+  {
+   "t": 1794877048278,
+   "index": 3092289,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877048415,
+   "index": 3092290,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877048479,
+   "index": 3092291,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877048589,
+   "index": 3092292,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 125
+  },
+  {
+   "t": 1794877048680,
+   "index": 3092293,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877048777,
+   "index": 3092294,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877048879,
+   "index": 3092295,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877048988,
+   "index": 3092296,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 125
+  },
+  {
+   "t": 1794877049083,
+   "index": 3092297,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877049216,
+   "index": 3092298,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877049274,
+   "index": 3092299,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877049398,
+   "index": 3092300,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 123
+  },
+  {
+   "t": 1794877049474,
+   "index": 3092301,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877049602,
+   "index": 3092302,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877049672,
+   "index": 3092303,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877049808,
+   "index": 3092304,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 123
+  },
+  {
+   "t": 1794877049913,
+   "index": 3092305,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 42
+  },
+  {
+   "t": 1794877050016,
+   "index": 3092306,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877050114,
+   "index": 3092307,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877050221,
+   "index": 3092308,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 122
+  },
+  {
+   "t": 1794877050276,
+   "index": 3092309,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877050376,
+   "index": 3092310,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877050472,
+   "index": 3092311,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 42
+  },
+  {
+   "t": 1794877050618,
+   "index": 3092312,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 125
+  },
+  {
+   "t": 1794877050685,
+   "index": 3092313,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877050782,
+   "index": 3092314,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877050896,
+   "index": 3092315,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877050984,
+   "index": 3092316,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 125
+  },
+  {
+   "t": 1794877051105,
+   "index": 3092317,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877051185,
+   "index": 3092318,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877051311,
+   "index": 3092319,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877051385,
+   "index": 3092320,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 127
+  },
+  {
+   "t": 1794877051523,
+   "index": 3092321,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877051585,
+   "index": 3092322,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877051684,
+   "index": 3092323,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877051785,
+   "index": 3092324,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 127
+  },
+  {
+   "t": 1794877051883,
+   "index": 3092325,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877051980,
+   "index": 3092326,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877052118,
+   "index": 3092327,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877052182,
+   "index": 3092328,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 127
+  },
+  {
+   "t": 1794877052279,
+   "index": 3092329,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877052393,
+   "index": 3092330,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877052478,
+   "index": 3092331,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877052607,
+   "index": 3092332,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 126
+  },
+  {
+   "t": 1794877052721,
+   "index": 3092333,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877052816,
+   "index": 3092334,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877052919,
+   "index": 3092335,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877052993,
+   "index": 3092336,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 126
+  },
+  {
+   "t": 1794877053088,
+   "index": 3092337,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877053180,
+   "index": 3092338,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877053283,
+   "index": 3092339,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877053380,
+   "index": 3092340,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877053480,
+   "index": 3092341,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877053589,
+   "index": 3092342,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877053682,
+   "index": 3092343,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877053807,
+   "index": 3092344,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877053881,
+   "index": 3092345,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877053992,
+   "index": 3092346,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877054119,
+   "index": 3092347,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877054185,
+   "index": 3092348,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877054325,
+   "index": 3092349,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877054392,
+   "index": 3092350,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877054478,
+   "index": 3092351,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877054588,
+   "index": 3092352,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 132
+  },
+  {
+   "t": 1794877054684,
+   "index": 3092353,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877054780,
+   "index": 3092354,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877054875,
+   "index": 3092355,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 45
+  },
+  {
+   "t": 1794877054981,
+   "index": 3092356,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877055078,
+   "index": 3092357,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 44
+  },
+  {
+   "t": 1794877055196,
+   "index": 3092358,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877055286,
+   "index": 3092359,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 43
+  },
+  {
+   "t": 1794877055408,
+   "index": 3092360,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877055480,
+   "index": 3092361,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 41
+  },
+  {
+   "t": 1794877055593,
+   "index": 3092362,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 41
+  },
+  {
+   "t": 1794877055718,
+   "index": 3092363,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 41
+  },
+  {
+   "t": 1794877055824,
+   "index": 3092364,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877055920,
+   "index": 3092365,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 40
+  },
+  {
+   "t": 1794877056025,
+   "index": 3092366,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 41
+  },
+  {
+   "t": 1794877056122,
+   "index": 3092367,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 41
+  },
+  {
+   "t": 1794877056178,
+   "index": 3092368,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 135
+  },
+  {
+   "t": 1794877056277,
+   "index": 3092369,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 40
+  },
+  {
+   "t": 1794877056389,
+   "index": 3092370,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 40
+  },
+  {
+   "t": 1794877056474,
+   "index": 3092371,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 39
+  },
+  {
+   "t": 1794877056598,
+   "index": 3092372,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 135
+  },
+  {
+   "t": 1794877056677,
+   "index": 3092373,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 40
+  },
+  {
+   "t": 1794877056811,
+   "index": 3092374,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 40
+  },
+  {
+   "t": 1794877056878,
+   "index": 3092375,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 40
+  },
+  {
+   "t": 1794877056979,
+   "index": 3092376,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877057083,
+   "index": 3092377,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 39
+  },
+  {
+   "t": 1794877057178,
+   "index": 3092378,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 39
+  },
+  {
+   "t": 1794877057278,
+   "index": 3092379,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 39
+  },
+  {
+   "t": 1794877057381,
+   "index": 3092380,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877057472,
+   "index": 3092381,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 39
+  },
+  {
+   "t": 1794877057584,
+   "index": 3092382,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 39
+  },
+  {
+   "t": 1794877057680,
+   "index": 3092383,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 39
+  },
+  {
+   "t": 1794877057792,
+   "index": 3092384,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 130
+  },
+  {
+   "t": 1794877057892,
+   "index": 3092385,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058015,
+   "index": 3092386,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058077,
+   "index": 3092387,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058187,
+   "index": 3092388,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 130
+  },
+  {
+   "t": 1794877058282,
+   "index": 3092389,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058387,
+   "index": 3092390,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058480,
+   "index": 3092391,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058587,
+   "index": 3092392,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 130
+  },
+  {
+   "t": 1794877058685,
+   "index": 3092393,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058781,
+   "index": 3092394,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058878,
+   "index": 3092395,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877058998,
+   "index": 3092396,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877059085,
+   "index": 3092397,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877059193,
+   "index": 3092398,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877059310,
+   "index": 3092399,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877059379,
+   "index": 3092400,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877059475,
+   "index": 3092401,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877059575,
+   "index": 3092402,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877059674,
+   "index": 3092403,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877059790,
+   "index": 3092404,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877059887,
+   "index": 3092405,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877059973,
+   "index": 3092406,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877060074,
+   "index": 3092407,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877060185,
+   "index": 3092408,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877060273,
+   "index": 3092409,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877060398,
+   "index": 3092410,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877060475,
+   "index": 3092411,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877060603,
+   "index": 3092412,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877060674,
+   "index": 3092413,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877060777,
+   "index": 3092414,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877060877,
+   "index": 3092415,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877060977,
+   "index": 3092416,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877061075,
+   "index": 3092417,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877061177,
+   "index": 3092418,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877061276,
+   "index": 3092419,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877061426,
+   "index": 3092420,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 141
+  },
+  {
+   "t": 1794877061487,
+   "index": 3092421,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877061579,
+   "index": 3092422,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877061675,
+   "index": 3092423,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877061796,
+   "index": 3092424,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 140
+  },
+  {
+   "t": 1794877061877,
+   "index": 3092425,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877062002,
+   "index": 3092426,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877062077,
+   "index": 3092427,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877062194,
+   "index": 3092428,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 139
+  },
+  {
+   "t": 1794877062318,
+   "index": 3092429,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877062415,
+   "index": 3092430,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877062472,
+   "index": 3092431,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877062574,
+   "index": 3092432,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 139
+  },
+  {
+   "t": 1794877062677,
+   "index": 3092433,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877062775,
+   "index": 3092434,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877062879,
+   "index": 3092435,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877062979,
+   "index": 3092436,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 142
+  },
+  {
+   "t": 1794877063077,
+   "index": 3092437,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877063176,
+   "index": 3092438,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877063297,
+   "index": 3092439,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877063379,
+   "index": 3092440,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 140
+  },
+  {
+   "t": 1794877063492,
+   "index": 3092441,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877063593,
+   "index": 3092442,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877063715,
+   "index": 3092443,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877063786,
+   "index": 3092444,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 142
+  },
+  {
+   "t": 1794877063881,
+   "index": 3092445,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877063973,
+   "index": 3092446,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877064076,
+   "index": 3092447,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877064176,
+   "index": 3092448,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 141
+  },
+  {
+   "t": 1794877064275,
+   "index": 3092449,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877064421,
+   "index": 3092450,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877064521,
+   "index": 3092451,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877064577,
+   "index": 3092452,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 142
+  },
+  {
+   "t": 1794877064689,
+   "index": 3092453,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877064775,
+   "index": 3092454,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877064893,
+   "index": 3092455,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877064999,
+   "index": 3092456,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 140
+  },
+  {
+   "t": 1794877065078,
+   "index": 3092457,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877065203,
+   "index": 3092458,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877065275,
+   "index": 3092459,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877065418,
+   "index": 3092460,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 138
+  },
+  {
+   "t": 1794877065518,
+   "index": 3092461,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877065616,
+   "index": 3092462,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877065721,
+   "index": 3092463,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877065827,
+   "index": 3092464,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 135
+  },
+  {
+   "t": 1794877065893,
+   "index": 3092465,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877065973,
+   "index": 3092466,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877066077,
+   "index": 3092467,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 38
+  },
+  {
+   "t": 1794877066182,
+   "index": 3092468,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 136
+  },
+  {
+   "t": 1794877066278,
+   "index": 3092469,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877066384,
+   "index": 3092470,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877066493,
+   "index": 3092471,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877066587,
+   "index": 3092472,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 138
+  },
+  {
+   "t": 1794877066707,
+   "index": 3092473,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877066775,
+   "index": 3092474,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877066873,
+   "index": 3092475,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877066982,
+   "index": 3092476,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877067084,
+   "index": 3092477,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877067184,
+   "index": 3092478,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877067282,
+   "index": 3092479,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877067377,
+   "index": 3092480,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 132
+  },
+  {
+   "t": 1794877067477,
+   "index": 3092481,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877067590,
+   "index": 3092482,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877067681,
+   "index": 3092483,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877067803,
+   "index": 3092484,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877067876,
+   "index": 3092485,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877068006,
+   "index": 3092486,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877068084,
+   "index": 3092487,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 37
+  },
+  {
+   "t": 1794877068218,
+   "index": 3092488,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 130
+  },
+  {
+   "t": 1794877068317,
+   "index": 3092489,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 36
+  },
+  {
+   "t": 1794877068416,
+   "index": 3092490,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877068493,
+   "index": 3092491,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877068574,
+   "index": 3092492,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877068676,
+   "index": 3092493,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877068779,
+   "index": 3092494,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877068885,
+   "index": 3092495,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877068988,
+   "index": 3092496,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877069098,
+   "index": 3092497,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877069175,
+   "index": 3092498,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877069310,
+   "index": 3092499,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877069377,
+   "index": 3092500,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 135
+  },
+  {
+   "t": 1794877069479,
+   "index": 3092501,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877069576,
+   "index": 3092502,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877069678,
+   "index": 3092503,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877069778,
+   "index": 3092504,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877069885,
+   "index": 3092505,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877069983,
+   "index": 3092506,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070079,
+   "index": 3092507,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070186,
+   "index": 3092508,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877070287,
+   "index": 3092509,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070402,
+   "index": 3092510,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070472,
+   "index": 3092511,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070611,
+   "index": 3092512,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 133
+  },
+  {
+   "t": 1794877070720,
+   "index": 3092513,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070814,
+   "index": 3092514,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070915,
+   "index": 3092515,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877070984,
+   "index": 3092516,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 134
+  },
+  {
+   "t": 1794877071082,
+   "index": 3092517,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877071175,
+   "index": 3092518,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877071284,
+   "index": 3092519,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877071378,
+   "index": 3092520,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 135
+  },
+  {
+   "t": 1794877071495,
+   "index": 3092521,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877071578,
+   "index": 3092522,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877071702,
+   "index": 3092523,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877071782,
+   "index": 3092524,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 137
+  },
+  {
+   "t": 1794877071906,
+   "index": 3092525,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877071982,
+   "index": 3092526,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 35
+  },
+  {
+   "t": 1794877072115,
+   "index": 3092527,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877072225,
+   "index": 3092528,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 137
+  },
+  {
+   "t": 1794877072325,
+   "index": 3092529,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 34
+  },
+  {
+   "t": 1794877072424,
+   "index": 3092530,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877072506,
+   "index": 3092531,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877072590,
+   "index": 3092532,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 138
+  },
+  {
+   "t": 1794877072681,
+   "index": 3092533,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877072815,
+   "index": 3092534,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877072925,
+   "index": 3092535,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877072984,
+   "index": 3092536,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 138
+  },
+  {
+   "t": 1794877073082,
+   "index": 3092537,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877073176,
+   "index": 3092538,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877073298,
+   "index": 3092539,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877073393,
+   "index": 3092540,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 138
+  },
+  {
+   "t": 1794877073514,
+   "index": 3092541,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877073575,
+   "index": 3092542,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877073681,
+   "index": 3092543,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 33
+  },
+  {
+   "t": 1794877073786,
+   "index": 3092544,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 138
+  },
+  {
+   "t": 1794877073883,
+   "index": 3092545,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 32
+  },
+  {
+   "t": 1794877073980,
+   "index": 3092546,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877074074,
+   "index": 3092547,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877074178,
+   "index": 3092548,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 138
+  },
+  {
+   "t": 1794877074277,
+   "index": 3092549,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 30
+  },
+  {
+   "t": 1794877074394,
+   "index": 3092550,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 30
+  },
+  {
+   "t": 1794877074475,
+   "index": 3092551,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 30
+  },
+  {
+   "t": 1794877074593,
+   "index": 3092552,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 137
+  },
+  {
+   "t": 1794877074719,
+   "index": 3092553,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 30
+  },
+  {
+   "t": 1794877074777,
+   "index": 3092554,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877074877,
+   "index": 3092555,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877074980,
+   "index": 3092556,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877075077,
+   "index": 3092557,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877075174,
+   "index": 3092558,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877075273,
+   "index": 3092559,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877075380,
+   "index": 3092560,
+   "lowFreq": true,
+   "full": false,
+   "tanks": 131
+  },
+  {
+   "t": 1794877075475,
+   "index": 3092561,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  },
+  {
+   "t": 1794877075590,
+   "index": 3092562,
+   "lowFreq": false,
+   "full": false,
+   "tanks": 31
+  }
+ ],
+ "tickHz": {
+  "worldMessages": 331,
+  "spanMs": 32946,
+  "avgIntervalMs": 99.8,
+  "hz": 10,
+  "sends": 306
+ },
+ "phase": "teleport-300",
+ "phaseResults": {
+  "settle": {
+   "ms": 18000,
+   "mode": "sail",
+   "sailDelta": 1,
+   "rich": false,
+   "interpMode": "global",
+   "sentTicks": 167,
+   "worldTicks": 180,
+   "selfFoundInWorld": 1,
+   "serverSeenBefore": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "serverSeenAfter": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "actorInterpBefore": 1,
+   "actorInterpAfter": 1,
+   "moved": false,
+   "resetsThisPhase": [
+    {
+     "forcePos": false,
+     "x": 22,
+     "z": -1,
+     "actorInterp": 1,
+     "heldBy": true,
+     "count": 165
+    }
+   ],
+   "eventsThisPhase": []
+  },
+  "sail-global-interp": {
+   "ms": 4000,
+   "mode": "sail",
+   "sailDelta": 3,
+   "rich": false,
+   "interpMode": "global",
+   "sentTicks": 37,
+   "worldTicks": 41,
+   "selfFoundInWorld": 0,
+   "serverSeenBefore": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "serverSeenAfter": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "actorInterpBefore": 1,
+   "actorInterpAfter": 1,
+   "moved": false,
+   "resetsThisPhase": [
+    {
+     "forcePos": false,
+     "x": 22,
+     "z": -1,
+     "actorInterp": 1,
+     "heldBy": true,
+     "count": 37
+    }
+   ],
+   "eventsThisPhase": []
+  },
+  "sail-actor-interp-rich": {
+   "ms": 4000,
+   "mode": "sail",
+   "sailDelta": 3,
+   "rich": true,
+   "interpMode": "actor",
+   "sentTicks": 37,
+   "worldTicks": 40,
+   "selfFoundInWorld": 0,
+   "serverSeenBefore": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "serverSeenAfter": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "actorInterpBefore": 1,
+   "actorInterpAfter": 1,
+   "moved": false,
+   "resetsThisPhase": [
+    {
+     "forcePos": false,
+     "x": 22,
+     "z": -1,
+     "actorInterp": 1,
+     "heldBy": true,
+     "count": 38
+    }
+   ],
+   "eventsThisPhase": []
+  },
+  "hold-after": {
+   "ms": 2000,
+   "mode": "hold",
+   "sailDelta": 3,
+   "rich": true,
+   "interpMode": "actor",
+   "sentTicks": 19,
+   "worldTicks": 20,
+   "selfFoundInWorld": 0,
+   "serverSeenBefore": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "serverSeenAfter": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "actorInterpBefore": 1,
+   "actorInterpAfter": 1,
+   "moved": false,
+   "resetsThisPhase": [
+    {
+     "forcePos": false,
+     "x": 22,
+     "z": -1,
+     "actorInterp": 1,
+     "heldBy": true,
+     "count": 18
+    }
+   ],
+   "eventsThisPhase": []
+  },
+  "teleport-120": {
+   "jump": 120,
+   "interpMode": "actor",
+   "rich": true,
+   "serverHad": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "targetAfterJump": {
+    "x": 141.63061904907227,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "serverSeenAfter": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "selfFoundInWorld": 0,
+   "worldTicks": 25,
+   "resetYourStateCount": 23,
+   "eventCount": 0,
+   "acceptedJump": false
+  },
+  "teleport-300": {
+   "jump": 300,
+   "interpMode": "actor",
+   "rich": true,
+   "serverHad": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "targetAfterJump": {
+    "x": 321.63061904907227,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "serverSeenAfter": {
+    "x": 21.630619049072266,
+    "y": 4.692139148712158,
+    "z": -0.6295608282089233
+   },
+   "selfFoundInWorld": 0,
+   "worldTicks": 25,
+   "resetYourStateCount": 21,
+   "eventCount": 0,
+   "acceptedJump": false
+  }
+ },
+ "sendCount": 306,
+ "close": null,
+ "errors": []
+}

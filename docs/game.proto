@@ -1,0 +1,1139 @@
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+
+message TestingSphere {
+  string id = 1;
+  float x = 2;
+  float y = 3;
+  float z = 4;
+  float scale = 5;
+}
+
+message InitMessage {
+  string id = 1;
+  int32 client_version = 2;
+
+  bool is_crazygames = 3;
+}
+
+message DisconnectReasonMessage {
+  uint32 reason = 1;
+  optional string description = 2;
+}
+
+enum ShipFlag {
+  ShipFlagNone = 0;
+
+  ShipDraggedUnder = 1;
+}
+
+enum ActorClassification {
+  Human = 0;
+  NpcCivilian = 1;
+  NpcLandPatrol = 2;
+  NpcDanger = 3;
+  Island = 4;
+  Neutral = 5;
+  NpcTrader = 6;
+}
+
+message TankMessage {
+  uint64 id = 1;
+  optional string username = 2;
+  optional float x = 3;
+  optional float y = 4;
+  optional float z = 5;
+  optional float rotation_x = 6;
+  optional float rotation_y = 7;
+  optional float rotation_z = 8;
+  optional float turret_direction_x = 9;
+  optional float turret_direction_y = 10;
+  optional float turret_direction_z = 11;
+  optional uint32 interpolation_index = 12;
+  optional float health = 15;
+  optional bool is_dead = 16;
+  optional uint32 tank_type = 17;
+  optional uint32 animation_state = 18;
+  optional uint32 held_weapon = 19;
+
+  optional uint32 state_flags = 20;
+  optional VectorMessage rotation_1 = 21;
+  optional VectorMessage turret_direction_1 = 22;
+  optional uint32 animation_state_2 = 23;
+  optional string gid = 24;
+  optional string clan_tag = 25;
+  optional uint64 relative_to_id = 26;
+  optional VectorMessage rotation_2 = 27;
+  optional VectorMessage rotation_3 = 28;
+  optional VectorMessage rotation_4 = 29;
+  optional VectorMessage rotation_5 = 30;
+  optional int32 interacting_with_index = 31;
+  optional uint32 skin = 32;
+  optional uint64 group_id = 33;
+  optional uint64 relative_to_vehicle_id = 34;
+  optional uint32 vehicle_position_index = 35;
+  optional PassengerIds passenger_ids = 36;
+  optional bool is_owned_vehicle = 37;
+  optional uint64 dragged_by = 38;
+  optional uint64 dragging = 39;
+  optional bool is_empty_tank_message = 40;
+  optional bool is_npc = 41;
+  optional uint64 original_owner = 42;
+  optional VectorMessage rotation_6 = 43;
+  optional VectorMessage rotation_7 = 44;
+  optional uint32 character_mesh = 45;
+  optional ActorClassification classification = 46;
+  optional float scale = 47;
+  optional uint32 item_type = 48;
+  optional uint64 carried_item_id = 49;
+
+  optional uint64 interactable_actor_id = 50;
+  optional VectorMessage rotation_8 = 51;
+  optional VectorMessage rotation_9 = 52;
+  optional VectorMessage rotation_10 = 53;
+  optional VectorMessage rotation_11 = 54;
+  optional VectorMessage rotation_12 = 55;
+  optional VectorMessage rotation_13 = 56;
+  optional VectorMessage rotation_14 = 57;
+  optional VectorMessage rotation_15 = 58;
+  optional VectorMessage rotation_16 = 59;
+  optional VectorMessage rotation_17 = 60;
+  optional VectorMessage rotation_18 = 61;
+  optional VectorMessage rotation_19 = 62;
+
+  optional BoneRotations bone_rotations = 63;
+  optional HeldByMessage held_by = 64;
+}
+
+message HeldByMessage {
+  uint64 holder_id = 1;
+  uint32 hold_point = 2;
+}
+
+message PassengerIds {
+  repeated uint64 ids = 1;
+}
+
+message BoneRotations {
+  bytes packed = 1;
+}
+
+message MyTankMessage {
+  uint64 id = 1;
+  optional string username = 2;
+  optional float x = 3;
+  optional float y = 4;
+  optional float z = 5;
+  optional float rotation_x = 6;
+  optional float rotation_y = 7;
+  optional float rotation_z = 8;
+  optional float turret_direction_x = 9;
+  optional float turret_direction_y = 10;
+  optional float turret_direction_z = 11;
+  uint32 interpolation_index = 12;
+  optional uint32 selected_turret = 13;
+  optional uint32 animation_state = 14;
+  optional uint32 held_weapon = 15;
+  optional uint32 animation_state_2 = 16;
+  optional uint64 relative_to_id = 17;
+  optional int32 interacting_with_index = 18;
+  optional VectorMessage interaction_vector = 19;
+  optional uint64 relative_to_vehicle_id = 20;
+  optional uint32 vehicle_position_index = 21;
+  optional float vehicle_x = 22;
+  optional float vehicle_y = 23;
+  optional float vehicle_z = 24;
+  optional float vehicle_rotation_x = 25;
+  optional float vehicle_rotation_y = 26;
+  optional float vehicle_rotation_z = 27;
+  optional uint64 vehicle_relative_to_id = 28;
+  optional uint32 vehicle_animation_state = 29;
+  optional bool client_pressed_something_for_anti_afk = 30;
+
+  optional uint64 interactable_actor_id = 31;
+}
+
+message ResetYourState {
+
+  optional TankMessage your_tank = 1;
+
+  optional TankMessage relative_to = 2;
+
+  optional EquippedItems equipment = 3;
+
+  optional TankMessage your_spectator = 4;
+
+  optional TankMessage vehicle = 5;
+
+  optional float map_size = 6;
+
+  repeated TankMessage static_actors = 7;
+
+  optional bool force_position = 8;
+
+  optional TankMessage holder = 9;
+}
+
+message PlayerObjective {
+  string name = 1;
+  float x = 2;
+  float y = 3;
+  float z = 4;
+}
+
+message MyChangingDetails {
+  optional float gold = 1;
+  optional uint32 wanted_time = 2;
+  optional bool is_firing_from_water = 3;
+  optional float hunger = 4;
+  optional PlayerObjective player_objective = 5;
+  optional float level = 6;
+
+  optional float speed_factor = 7;
+
+  optional bool no_pvp_zone_forfeited = 8;
+}
+
+message WorldMessage {
+  uint64 index = 1;
+  bool is_low_frequency = 2;
+
+  repeated TankMessage tanks = 3;
+  bool is_full_state = 4;
+  double shader_time = 5;
+  float map_size = 6;
+  optional MyChangingDetails changing_details = 8;
+  repeated uint64 actors_to_remove = 10;
+  optional uint64 group_id = 11;
+
+  optional MyCrewResponse my_crew = 12;
+}
+
+message TestingMessage {
+  string id = 1;
+  float x = 2;
+  float y = 3;
+  float z = 4;
+  float scale = 5;
+  optional uint32 color = 6;
+}
+
+message RequestFullState {
+  uint64 index = 1;
+}
+
+message MyChatMessage {
+  bool is_group = 1;
+  string message = 2;
+}
+
+message ChatMessage {
+  string id = 1;
+  optional string username = 2;
+  optional string clan_tag = 3;
+  string message = 4;
+  bool is_group = 5;
+  uint32 messageType = 6;
+
+  optional float top_leaderboard_importance = 7;
+}
+
+message MyFiringMessage {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float direction_x = 4;
+  float direction_y = 5;
+  float direction_z = 6;
+  uint32 cannon_ball_type = 7;
+  uint64 id = 8;
+
+  optional uint64 relative_to_id = 9;
+}
+
+message CannonBallMessage {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float velocity_x = 4;
+  float velocity_y = 5;
+  float velocity_z = 6;
+  uint32 cannon_ball_type = 7;
+  uint64 id = 8;
+  uint64 fired_by_id = 9;
+  float downward_velocity = 10;
+}
+
+message GlobalExplosion {
+  uint32 ground_explosion_type = 1;
+  float scale = 2;
+  float x = 3;
+  float y = 4;
+  float z = 5;
+  float velocity_x = 6;
+  float velocity_y = 7;
+  float velocity_z = 8;
+  float smoke_explosion_scale = 9;
+  float smoke_outwards_speed_factor = 10;
+  float particle_outwards_speed_factor = 11;
+}
+
+message TankDamageMessage {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+
+  uint64 tank_id = 4;
+  float radius = 5;
+  optional uint32 sound_to_play = 6;
+
+  bool decal_only = 7;
+
+  optional float travel_x = 8;
+  optional float travel_y = 9;
+  optional float travel_z = 10;
+
+  optional uint32 smoke_plume_type = 11;
+
+  optional uint32 bone_index = 12;
+}
+
+message EventMessage {
+  string primary = 1;
+  string secondary = 2;
+  uint32 event_message_type = 3;
+}
+
+message HitMessage {
+  uint64 tank_hit = 1;
+  float x = 2;
+  float y = 3;
+  float z = 4;
+  optional float nerf_factor = 5;
+  optional bool headshot = 6;
+}
+
+message HitMeFromMessage {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+message LazyLoaderMessage {
+  string id = 1;
+}
+
+message ProtoPosition {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+message PositionAndDestination {
+  optional ProtoPosition position = 1;
+  optional ProtoPosition destination = 2;
+}
+
+message AllBotPositionsAndDestinations {
+  repeated PositionAndDestination bot_positions = 1;
+}
+
+enum RespawnLocation {
+  RespawnHavana = 0;
+  RespawnPort = 1;
+  RespawnYourShip = 2;
+  RespawnJungle = 3;
+}
+
+message RequestRespawnMessage {
+  RespawnLocation location = 1;
+  optional uint32 ship_type = 2;
+}
+
+message ShowRespawnDialogueMessage {
+  bool show = 1;
+}
+
+message RemoveCannonBall {
+  optional uint64 cannon_ball_to_remove = 1;
+}
+
+message GibMessage {
+  uint64 tank_id = 1;
+  float x = 2;
+  float y = 3;
+  float z = 4;
+  float velocity_x = 5;
+  float velocity_y = 6;
+  float velocity_z = 7;
+}
+
+message PlayerScore {
+  string name = 1;
+  optional string clan_tag = 2;
+  float score = 3;
+  bool  is_me = 4;
+  uint32 rank = 5;
+  uint64 group_id = 6;
+
+  optional float top_leaderboard_importance = 7;
+}
+
+message ScoresMessage {
+
+  repeated PlayerScore scores = 1;
+  uint32 players_online = 3;
+}
+
+message CannonBallPropsMessage {
+  uint32 cannon_ball_type = 1;
+  float speed = 2;
+  float firing_interval = 3;
+  float gravity = 4;
+  float scale = 5;
+  float level_required = 6;
+  float acceleration = 7;
+  float max_speed = 8;
+  string name = 9;
+  float cost = 10;
+  bool unlockable = 11;
+  float recommended_range = 12;
+  bool is_melee = 13;
+  uint32 reloading_group = 16;
+  bool whizzes_past_sound = 18;
+  float radius = 19;
+  float reload_holstered_factor = 20;
+  bool fire_on_touch_release = 21;
+  bool is_consumable = 22;
+  bool is_droppable = 24;
+  float damage = 26;
+  float damage_to_soldiers = 27;
+  uint32 shotgun_pellet_count = 28;
+
+  float effect_seconds = 29;
+  float lingering_damage_fraction = 30;
+  float slow_fraction = 31;
+
+  float range_nerf_start_distance = 32;
+  float range_nerf_end_distance = 33;
+  float range_nerf_end_factor = 34;
+  uint32 max_hits_per_target = 35;
+
+  uint32 held_weapon_class = 36;
+  float melee_reach = 37;
+  float refill_cost_per_use = 39;
+
+  optional uint32 projectile_glow_color = 41;
+
+  uint32 shots_per_reload = 42;
+  float clip_round_interval = 43;
+
+  uint32 melee_affliction = 45;
+
+  bool is_unlimited = 47;
+  uint32 max_uses = 48;
+  bool show_uses_as_bar = 49;
+
+  bool is_gun = 50;
+
+  bool is_dual_wielded = 51;
+}
+
+message IslandInfoMessage {
+  string name = 1;
+  float x = 2;
+  float z = 3;
+  float radius = 5;
+  float no_pvp_radius = 6;
+
+  float no_pvp_x = 7;
+  float no_pvp_z = 8;
+
+  float bounds_radius = 9;
+}
+
+message ServerConstantsMessage {
+  repeated CannonBallPropsMessage cannon_ball_props = 2;
+  repeated TankStatsMessage tank_stats = 3;
+  repeated IslandInfoMessage islands = 4;
+
+  repeated CharacterMeshUnlockMessage character_mesh_unlocks = 5;
+  repeated MapLandmarkMessage map_landmarks = 6;
+}
+
+enum MapLandmarkType {
+  MapLandmarkUnknown = 0;
+  MapLandmarkKraken = 1;
+}
+
+message MapLandmarkMessage {
+  MapLandmarkType type = 1;
+  float x = 2;
+  float z = 3;
+}
+
+message CharacterMeshUnlockMessage {
+  uint32 character_mesh = 1;
+  uint32 level = 2;
+
+  bool not_selectable = 3;
+}
+
+message TankStatsMessage {
+  uint32 tankType = 1;
+  float max_health = 2;
+  float speed = 3;
+  float rotation_speed = 4;
+  optional uint32 level_unlocked = 5;
+  string name = 6;
+  float slip_amount = 7;
+  bool is_meleeable = 8;
+  float floating_height = 9;
+  float swim_speed = 10;
+  float sail_wheel_rest_angle = 12;
+}
+
+message VectorMessage {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+message AnnouncementCreateRequest {
+  string title = 1;
+  string description = 2;
+  optional string  event_time = 3;
+  optional string repeated = 4;
+}
+
+message CreateClanRequest {
+  string short_name = 1;
+  string long_name = 2;
+  string description = 3;
+}
+
+message GetClanMembersRequest {
+  string clan_id = 1;
+  uint32 sorted_by = 2;
+  uint32 page = 3;
+}
+
+message ClanRequest {
+  optional bool my_full_info = 1;
+  optional string short_name = 2;
+  optional string long_name = 3;
+  optional string  description = 4;
+  optional bool list_clans = 5;
+  optional bool list_announcements = 6;
+  optional bool list_events = 7;
+  optional string list_clans_filter = 8;
+  optional string clan_info_for_id = 9;
+  optional string request_to_join_clan_id = 10;
+  optional string get_requests_to_join_clan_id = 11;
+  optional string reject_gid_joining = 12;
+  optional string accept_gid_joining = 13;
+  optional GetClanMembersRequest get_clan_members_for_clan = 14;
+  optional string make_admin_gid = 15;
+  optional string remove_admin_gid = 16;
+  optional string kick_gid = 17;
+  optional string transfer_ownership = 18;
+  optional string leave_clan = 19;
+  optional string delete_clan = 20;
+  optional AnnouncementCreateRequest create_announcement_request = 22;
+  optional bool read_announcements = 23;
+  optional bool read_events = 24;
+  optional bool is_unread_announcements = 25;
+  optional bool is_unread_events = 26;
+  optional string announcement_to_delete_id = 27;
+  optional string clan_id = 28;
+  optional string create_chat_message = 29;
+  optional string get_chat_messages_for_clan_id = 30;
+  optional bool mark_clan_chat_read = 31;
+  optional bool get_is_chat_unread = 32;
+  optional string delete_chat_message = 33;
+  optional CreateClanRequest create_clan_request = 34;
+  optional bool clear_all_join_requests = 35;
+  optional uint32 min_level = 36;
+  optional uint32 leaderboard_type = 37;
+  optional uint32 leaderboard_days = 38;
+}
+
+message MyClanInfoResponse {
+  string clan_id = 1;
+  string short_name = 2;
+  string long_name = 3;
+  string description = 4;
+  bool am_i_admin = 5;
+  bool am_i_owner = 6;
+  int32 player_count = 7;
+  string owner_username = 8;
+  float points = 9;
+  string last_read_announcements = 10;
+  string last_read_events = 11;
+  string last_read_chat = 12;
+  uint32 min_level = 13;
+}
+
+message ListedClan {
+  string clan_id = 1;
+  string clan_short_name = 2;
+  string clan_long_name = 3;
+  float clan_score = 4;
+}
+
+message ClanInfo {
+  string clan_id = 1;
+  string short_name = 2;
+  string long_name = 3;
+  string description = 4;
+  int32 player_count = 5;
+  string owner_username = 6;
+  float points = 7;
+  bool requested_to_join = 8;
+  bool is_in_clan = 9;
+  uint32 min_level = 10;
+}
+
+message ClanRequestToJoin {
+  string username = 1;
+  string gid = 2;
+  float level = 3;
+}
+
+message ClanMemberDetails {
+  string gid = 1;
+  float level = 2;
+  optional string last_played = 3;
+  bool is_admin = 4;
+  bool is_owner = 5;
+  string username = 6;
+  float clan_points = 7;
+  optional string server_name = 8;
+}
+
+message WallOfFameDetails {
+  string gid = 1;
+  optional string clan_short_name = 2;
+  optional string clan_long_name = 3;
+  string username = 4;
+  float score = 5;
+  optional string date = 6;
+  float level = 7;
+
+  optional float top_leaderboard_importance = 8;
+}
+
+message LeaderboardResponse {
+  uint32 leaderboard_type = 1;
+  repeated WallOfFameDetails entries = 2;
+  uint32 days = 3;
+}
+
+message ClanAnnouncement {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  optional string next_event_time = 4;
+  optional string repeats = 5;
+  string updated = 6;
+  string username = 7;
+}
+
+message ClanChatMessage {
+  string message_id = 1;
+  string gid = 2;
+  string clan_id = 3;
+  string created = 4;
+  string content = 5;
+  string username = 6;
+  float level = 7;
+  bool is_event = 8;
+}
+
+message CreateClanResponse {
+  optional string error_message = 1;
+  optional string success_message = 2;
+}
+
+message ClanMiscResponse {
+  optional MyClanInfoResponse my_clan_info = 1;
+  optional bool edited_done = 2;
+  repeated ListedClan listed_clans = 3;
+  optional ClanInfo clan_info = 4;
+  repeated ClanRequestToJoin requests_to_join = 5;
+  repeated ClanMemberDetails clan_member_details = 6;
+  repeated ClanAnnouncement announcements = 8;
+  optional bool announcement_created = 9;
+  optional bool is_announcements_unread = 10;
+  optional bool is_events_unread = 11;
+  repeated ClanChatMessage clan_chat_messages = 12;
+  optional bool is_clan_chat_unread = 13;
+  optional CreateClanResponse create_clan_response = 14;
+  optional bool clear_my_clan_info = 15;
+  optional bool clear_listed_clans = 16;
+  optional bool clear_requests_to_join = 17;
+  optional bool clear_clan_chat_messages = 18;
+  optional bool clear_clan_member_details = 19;
+  optional bool clan_members_stale = 20;
+  optional bool clear_announcements = 22;
+  optional LeaderboardResponse leaderboard = 23;
+}
+
+message FriendsRequest {
+  optional RequestPlayersInServer request_players_in_server = 1;
+  optional string add_friend_gid = 2;
+  optional string relative_user_info_gid = 3;
+  optional RequestFriends request_friends = 4;
+  optional string remove_friend_gid = 5;
+  optional string reject_friend_request_gid = 6;
+  optional uint32 request_friend_requests = 7;
+  optional string block_gid = 8;
+  optional string unblock_gid = 9;
+  optional RequestBlockedUsers request_blocked = 10;
+  optional RequestFriendsWithMessages request_friends_with_messages = 11;
+  optional string request_direct_messages_with_gid = 12;
+  optional SendDirectMessage send_direct_message = 13;
+  optional bool get_friend_notifications = 14;
+}
+
+message SendDirectMessage {
+  string to_gid = 1;
+  string content = 2;
+}
+
+message RequestBlockedUsers {
+  uint32 page = 1;
+}
+
+message RequestPlayersInServer {
+  string prefix = 1;
+  uint32 sort = 2;
+  uint32 page = 3;
+}
+
+message FriendsResponse {
+  repeated PlayerInServer players_in_server = 1;
+  optional bool clear_players_in_server = 2;
+  optional RelativeUserInfo relative_user_info = 3;
+  repeated Friend friends_list = 4;
+  optional bool clear_friends_list = 5;
+  optional bool friends_list_stale = 6;
+  repeated FriendRequestEntry friend_requests = 7;
+  optional bool clear_friend_requests = 8;
+  optional bool friend_requests_stale = 9;
+  repeated BlockedUser blocked_users = 10;
+  optional bool clear_blocked_users = 11;
+  optional bool blocked_users_stale = 12;
+  repeated FriendWithMessage friends_with_messages = 13;
+  optional bool clear_friends_with_messages = 14;
+  optional bool friends_with_messages_stale = 15;
+  repeated DirectMessage conversation = 16;
+  optional bool clear_conversation = 17;
+  optional FriendNotifications friend_notifications = 18;
+  optional bool relative_info_stale = 19;
+}
+
+message FriendNotifications {
+  bool unread_messages = 1;
+  bool incoming_friend_requests = 2;
+}
+
+message RelativeUserInfo {
+  string gid = 1;
+  bool is_blocking = 2;
+  bool is_friends = 3;
+  bool is_friend_requested = 4;
+}
+
+message PlayerInServer {
+  string gid = 1;
+  string username = 2;
+  optional string clan_tag = 3;
+  float level = 4;
+  float score = 5;
+}
+
+message RequestFriends {
+  string prefix = 1;
+  uint32 sort = 2;
+  uint32 page = 3;
+}
+
+message Friend {
+  string gid = 1;
+  string username = 2;
+
+  optional string clan_tag = 3;
+  float level = 4;
+
+  optional string last_online = 5;
+  optional string server_name = 6;
+}
+
+message FriendRequestEntry {
+  string gid = 1;
+  string username = 2;
+  optional string clan_tag = 3;
+  float level = 4;
+  string created = 5;
+  bool outgoing = 6;
+}
+
+message BlockedUser {
+  string gid = 1;
+  string username = 2;
+  optional string clan_tag = 3;
+  float level = 4;
+  string created = 5;
+}
+
+message FriendWithMessage {
+  string gid = 1;
+  string username = 2;
+
+  optional string clan_tag = 3;
+  float level = 4;
+
+  optional string last_online = 5;
+  optional string server_name = 6;
+  optional string last_message = 8;
+  optional bool is_message_unread = 9;
+  optional string last_read_at = 10;
+  optional string last_message_created = 11;
+}
+
+message RequestFriendsWithMessages {
+  uint32 page = 1;
+  string prefix = 2;
+}
+
+message DirectMessage {
+  string from_gid = 1;
+  string to_gid = 2;
+  string content = 3;
+  string created = 4;
+  string id = 5;
+}
+
+message GetFriendAndClanMemberPositions {
+  bool gimme = 1;
+}
+
+message FriendAndClanMembersMapPositions {
+  repeated PositionAndName positions = 1;
+
+  optional PositionAndName group_ship = 2;
+}
+
+message PositionAndName {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  string username = 4;
+  uint64 group_id = 5;
+  uint64 tank_id = 6;
+}
+
+message ModToolsRequest {
+  optional bool report_chat = 1;
+  optional string report_clan_id = 2;
+  optional string report_direct_messages_gid = 3;
+  optional string report_technical_issue = 4;
+}
+
+message RequestStuckRespawn {
+  bool gimme = 1;
+}
+
+message MyMeleeAttack {
+  uint64 tank_id_hit = 1;
+  float relative_x = 2;
+  float relative_y = 3;
+  float relative_z = 4;
+  uint32 weapon_type = 5;
+
+  float relative_direction_x = 6;
+  float relative_direction_y = 7;
+  float relative_direction_z = 8;
+}
+
+message FriendGids {
+  repeated string friend_gids = 1;
+}
+
+message CSCollision {
+  uint64 cannon_ball_id = 1;
+  uint64 tank_hit_id = 2;
+  optional VectorMessage relative_position = 3;
+  optional VectorMessage world_position = 4;
+}
+
+message ItemSlot {
+
+  int32 weapon_type = 1;
+  uint32 count = 2;
+}
+
+message EquippedItems {
+  repeated ItemSlot bag_items = 1;
+  repeated ItemSlot held_items = 2;
+
+  repeated ItemSlot cannonballs = 3;
+}
+
+message OpenCannonballShopRequest {
+  bool please = 1;
+}
+
+message CannonballShopResponse {
+  bool open = 1;
+}
+
+message BuyCannonballsRequest {
+  uint32 weapon_type = 1;
+  uint32 count = 2;
+}
+
+message BuyHeldWeaponRequest {
+  uint32 weapon_type = 1;
+}
+
+message RefillHeldWeaponsRequest {
+  uint32 weapon_type = 1;
+  bool all = 2;
+}
+
+message ItemCountMessage {
+  uint32 weapon_type = 1;
+  uint32 count = 2;
+}
+
+message GetMyEquippedItems {
+  bool please = 1;
+}
+
+message UpdateEquippedItems {
+
+  repeated ItemSlot bag_items = 1;
+  repeated ItemSlot held_items = 2;
+  repeated ItemSlot cannonballs = 3;
+}
+
+message PlaySoundMessage {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float volume_factor = 4;
+  uint32 sound_type = 5;
+}
+
+message MyGroupMessage {
+  string invite_token = 1;
+}
+
+message RequestJoinSpectators {
+  bool foo = 1;
+}
+
+message LeaveSpectators {
+  bool foo = 1;
+}
+
+message PullActorMessage {
+  uint64 actor_id = 1;
+}
+
+message PickUpItemMessage {
+  uint64 actor_id = 1;
+}
+
+message DropItemMessage {
+  bool foo = 1;
+  optional float x = 2;
+  optional float y = 3;
+  optional float z = 4;
+  optional float rotation_y = 5;
+
+  optional uint64 relative_to_id = 6;
+}
+
+message EatItemMessage {
+  uint32 weapon_type = 1;
+}
+
+message DropBagItemMessage {
+  uint32 weapon_type = 1;
+}
+
+message PersistedPlacementMessage {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+  double rotation_x = 4;
+  double rotation_y = 5;
+  double rotation_z = 6;
+  optional uint64 relative_to_ship_id = 7;
+}
+
+message PersistedPlayerMessage {
+  string id = 1;
+  uint64 group_id = 2;
+  bool is_group_leader = 3;
+  float score = 4;
+  optional PersistedPlacementMessage actor = 5;
+  double last_ate_at = 6;
+  uint32 held_weapon = 7;
+}
+
+message PersistedShipMessage {
+  uint64 id = 1;
+  uint32 ship_type = 2;
+  PersistedPlacementMessage placement = 3;
+  optional uint64 owner_group_id = 4;
+  optional uint32 skin = 5;
+  double steering = 6;
+  double sail_power = 7;
+  double sail_rotation = 8;
+}
+
+message PersistedItemMessage {
+  uint32 item_type = 1;
+  PersistedPlacementMessage placement = 2;
+  double scale = 3;
+  uint32 skin = 4;
+  bool ever_carried = 5;
+  string origin_island = 6;
+  double origin_x = 7;
+  double origin_y = 8;
+  double origin_z = 9;
+  double cargo_points = 10;
+  uint64 id = 11;
+}
+
+message PersistedStateMessage {
+  repeated PersistedPlayerMessage players = 1;
+  repeated PersistedShipMessage ships = 2;
+  repeated PersistedItemMessage items = 3;
+}
+
+message SelectSkinMessage {
+  uint32 selected_skin = 1;
+  uint32 character_mesh = 2;
+}
+
+message SkinSelectedMessage {
+  uint32 selected_skin = 1;
+  uint32 character_mesh = 2;
+}
+
+message SelectShipMessage {
+  uint32 ship_type = 1;
+}
+
+message ShipSelectedMessage {
+  uint32 ship_type = 1;
+}
+
+message FlushStatsMessage {
+  bool foo = 1;
+}
+
+message TutorialsSeenMessage {
+  bool steering = 1;
+  bool sail_power = 2;
+  bool cannons = 3;
+  bool raft_sails = 4;
+  bool raft_steering = 5;
+  bool rowing = 6;
+  bool items_and_trading = 7;
+  bool map = 8;
+
+  uint32 instructions_arrow_shown = 9;
+}
+
+message MedalEntry {
+  int32 medal_type = 1;
+  int64 count = 2;
+}
+
+message GetMedalsRequest {
+  bool foo = 1;
+}
+
+message MedalsResponse {
+  repeated MedalEntry medals = 1;
+}
+
+message GetPlayerMedalsRequest {
+  string gid = 1;
+}
+
+message PlayerMedalsResponse {
+  string gid = 1;
+  string username = 2;
+  repeated MedalEntry medals = 3;
+}
+
+message FishingReelMessage {
+  bool reeling = 1;
+
+  bool cancel = 2;
+}
+
+message PlaceGroupFlagMessage {
+  bool foo = 1;
+}
+
+enum CrewAction {
+  CrewGetOpenCrews = 0;
+  CrewGetMyCrew = 1;
+  CrewRequestJoin = 2;
+  CrewAcceptJoin = 3;
+  CrewLeave = 4;
+  CrewTransferLeadership = 5;
+  CrewKick = 6;
+}
+
+message CrewRequest {
+  CrewAction action = 1;
+  optional string target_gid = 2;
+}
+
+message CrewShip {
+  uint32 ship_type = 1;
+  uint32 cannon_count = 2;
+}
+
+message OpenCrew {
+  string leader_gid = 1;
+  string leader_username = 2;
+  optional string leader_clan_tag = 3;
+  uint32 member_count = 4;
+  optional CrewShip ship = 5;
+}
+
+message OpenCrewsResponse {
+  repeated OpenCrew crews = 1;
+}
+
+message CrewMember {
+  string gid = 1;
+  string username = 2;
+  optional string clan_tag = 3;
+  bool is_leader = 4;
+}
+
+message MyCrewResponse {
+  uint64 group_id = 1;
+  string leader_gid = 2;
+  repeated CrewMember members = 3;
+  optional CrewShip ship = 4;
+
+  string invite_token = 5;
+}
+
+message CrewJoinRequestMessage {
+  string requester_gid = 1;
+  string requester_username = 2;
+}
