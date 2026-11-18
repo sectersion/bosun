@@ -163,6 +163,20 @@ Probe-verified crew details (2026-11-17, rerun ✓):
   indeterminate from one run (later joiner C beat founder A; needs a 4th member to pin).
 - `PlaceGroupFlagMessage(71)` gate is standing on the ship's deck (position), not leadership.
 
+## Reconnect & resilience (library policy, 2026-11-18)
+
+Every new TCP connection is a **new handshake**: the downlink magic frame carries a fresh
+256-byte protocolKey, so any reconnect must re-handshake and re-XOR with the new key before
+sending anything (proven in `research/reconnect-live.js`). Library policy in `GameClient`:
+- Any socket close → exponential backoff reconnect (cap 30s) — unless flagged intentional
+- `DisconnectReason` codes steer policy: never reconnect on 0/2/9/10/14 (another tab, bans,
+  suspected hacking, kick, main-server ban); code **7 (oldClientVersion) triggers
+  `currentVersion()` re-scrape** (app.html → main.js chunk map → `938.*.js` → `L=`) and
+  reconnects with the new build number — version drift self-heals
+- After re-handshake, the server replays ServerConstants + full state (world resyncs itself);
+  `Bot` auto-re-enters the world (respawn 2 if a sail was in progress, else last spawn point)
+  and in-flight `walkTo`/`sailTo` loops skip ticks while down, then resume
+
 ## Open items
 
 - ~~Decode a full WorldMessage tick~~ done (probes decode all live types);

@@ -20,6 +20,9 @@ node friends-lifecycle.js    # friend request/accept/block/remove lifecycle
 node sail.js                 # movement-authority experiment (superseded: see research/MOVEMENT.md)
 node fleet-cost.js 6         # per-bot bandwidth/RAM/CPU measurement
 node test-world.js           # OFFLINE: WorldModel unit + recorded-fixture replay (no server)
+node test-movement.js        # OFFLINE: movement stepper unit tests (no server)
+node ../research/reconnect-live.js  # LIVE: forced socket drop → auto-reconnect, new key, world resync, walk resumes
+node -e "import('../lib/index.js').then(m=>m.currentVersion().then(v=>console.log(v)))"  # live client-build number (drift check)
 node world.js / bot.js       # the high-level layer: WorldModel (state) + Bot (socket+verbs)
 node probes/<domain>.js      # per-domain coverage probes
 ```
