@@ -1,6 +1,6 @@
 # API Coverage Matrix
 
-Generated 2026-11-17 from `probes/*.js` (salty-seas-lib guest-account probes) plus the
+Generated 2026-11-17 from `probes/*.js` (lib guest-account probes) plus the
 2026-11-16 DevTools capture and the main-session crew verification. Every implementer claim
 was adversarially re-run; **where the rerun contradicted the claim, this matrix takes the
 rerun's view.** Rubric: `exercised` = a server response was actually observed; **silence is
