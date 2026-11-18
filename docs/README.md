@@ -17,6 +17,7 @@ Unofficial documentation of the [Salty Seas](https://saltyseas.io) web game prot
 | [`coverage.md`](coverage.md) | Full API coverage matrix: every WS type + REST endpoint, verified status, reproduce steps |
 | [`clans.md`](clans.md) | Clan system deep-dive: the one-message/one-verb protocol, ack patterns, fleet automation recipe |
 | [`friends.md`](friends.md) | Friends & DM subsystem: request/accept semantics, block-is-destructive, verified DM block |
+| [`items.md`](items.md) | Actor taxonomy (tankType/weapon enums), verified pickup/drop/weapon-switch, melee open question |
 
 ## TL;DR connection flow
 

@@ -50,9 +50,9 @@ Dir: ↑ sent by client · ↓ received from server.
 | 39 | FriendAndClanMembersMapPositions | ↓ | friends | exercised | Replied `{}` — empty `positions[]`, no `group_ship` for solo guest. |
 | 40 | ModToolsRequest | ↑ | spectators | not-exercised | `{}` sent; zero frames — silently ignored, no response type exists. |
 | 41 | RequestStuckRespawn | ↑ | — | not-exercised | Never sent by any probe. |
-| 42 | MyMeleeAttack | ↑ | combat | not-exercised | Never sent by any probe. |
+| 42 | MyMeleeAttack | ↑ | combat | not-exercised | Sent with reverse-engineered target-local coords (hit≈body center, dir=target-local attack ray, LOS ok) — server gave no damage/ack. Suspect it requires the client's swing animationState/timing gate. Open. |
 | 43 | FriendGids | ↓ | config | exercised | Pushed `{}` on every connect, unsolicited (part of post-init state push). |
-| 46 | CSCollision | ↓ | — | not-exercised | Never observed in any session. |
+| 46 | CSCollision | ↑ | combat | **exercised (observed)** | 7× sent by the real client in the not_a_human capture when its cannonballs landed: {cannonBallId, tankHitId, relativePosition(target-local), worldPosition}. Confirms hits are client-declared (MOVEMENT.md). |
 | 47 | EquippedItems | ↓ | items/cosmetics | exercised | Pushed on connect (×2) + inside ResetYourState; fresh kit decoded: bag 10×`{weaponType:-1}`, held Sabre(4)/Musket(2)/Pistol(1)/FishingRod(12)/DeadFish/CrewFlag(15), cannonballs ShipCannon(5)×1 + Fire/Ice/Shell/Grape ×0. |
 | 48 | GetMyEquippedItems | ↑ | items/cosmetics | not-exercised | 3–4 sends, 0 replies — dead code path; kit readable via ResetYourState.equipment instead. |
 | 49 | UpdateEquippedItems | ↑ | items | exercised | Always answered with EquippedItems echo = ack: valid reorder → new order (accepted); count perturbation → original state (rejected silently). Only working bag read/write pair. |
@@ -68,8 +68,8 @@ Dir: ↑ sent by client · ↓ received from server.
 | 63 | GetPlayerMedalsRequest | ↑ | social | exercised | gid round-trip answered. |
 | 64 | PlayerMedalsResponse | ↓ | social | exercised | Echoed `{gid, username}`; `medals[]` omitted (zero). |
 | 65 | LeaveSpectators | ↑ | spectators | not-exercised | `{foo:true}` sent; 0 frames (world ticks kept flowing, so not a disconnect). |
-| 66 | PickUpItemMessage | ↑ | items | exercised-with-rejection | Distance validated: "Cannot pick up / It is too far away" at 13.5 m vs in-world item actor; success path unreachable without movement relay. |
-| 67 | DropItemMessage | ↑ | items | not-exercised | Silently ignored while carrying nothing (no Event, no reply). |
+| 66 | PickUpItemMessage | ↑ | items | **exercised (success)** | Walked a bot to 0.7u of a tankType:9 ItemActor, sent it → server set carriedItemId=<item id> via ResetYourState. Distance is the only gate (rejection text seen at 13.5m). pickup-live.js. |
+| 67 | DropItemMessage | ↑ | items | **exercised (success)** | `{foo:true,x,y,z}` while carrying → carriedItemId resets to 2^48-1 (the empty-hands sentinel). |
 | 68 | EatItemMessage | ↑ | items | not-exercised | weaponType 3 with empty bag → zero frames; success path unreached. |
 | 69 | DropBagItemMessage | ↑ | items | not-exercised | Empty bag → zero frames, no validation error. |
 | 70 | FishingReelMessage | ↑ | items | exercised | `{reeling:true}` on land → full ResetYourState re-push 1/1 in rerun (cancel path not re-verified); no cast/hook actor state machine visible from land. |
