@@ -4,3 +4,9 @@ fleet-accounts.json
 probes/out/
 *.log
 .DS_Store
+
+# raw capture artifacts (large; contain session keys) — only lib/fixtures/* is committed
+research/*.jsonl
+!research/README.md
+research/full-analysis.txt
+research/game-window.json

@@ -17,12 +17,20 @@ node demo.js --probe         # + connect, handshake, decode live ticks
 node group.js 5 --prefix Kraken --link "<invite url>"   # fleet crew-grouping
 node clans-lifecycle.js      # full clan create→join→manage→dismiss probe (cleans up)
 node friends-lifecycle.js    # friend request/accept/block/remove lifecycle
-node sail.js                 # movement-authority experiment (currently: rubber-banded)
+node sail.js                 # movement-authority experiment (superseded: see research/MOVEMENT.md)
 node fleet-cost.js 6         # per-bot bandwidth/RAM/CPU measurement
+node test-world.js           # OFFLINE: WorldModel unit + recorded-fixture replay (no server)
+node world.js / bot.js       # the high-level layer: WorldModel (state) + Bot (socket+verbs)
 node probes/<domain>.js      # per-domain coverage probes
 ```
 
-No build/lint/test suite — the live probes ARE the tests; run them to validate protocol changes.
+No build/lint/test suite — the live probes ARE the tests; run them to validate protocol changes. **`lib/test-world.js` is the exception: a fully offline unit+replay test (no server) that gates the WorldModel merge semantics against `lib/fixtures/session-90s.jsonl` — run it after any protocol-layer change before touching live servers.**
+
+## High-level layer (mineflayer core)
+
+- `lib/world.js` `WorldModel` — socket-free, evented actor registry. `apply(name,msg)` merges full-state snapshots / optional-field deltas / `actorsToRemove` despawns (null=clear, absent=unchanged) and emits `spawn/tick/actorAppear/actorMoved/actorGone/chat/event/explosion/damage/scores/crew`. Queries: `humans()/islands()/vessels()/traders()/nearestFrom()/positionOf()` (resolves vehicle-relative chain; ignores parent rotation — see ponytail note).
+- `lib/bot.js` `Bot`/`createBot` — WorldModel wired to a live `GameClient`, plus first verbs (`spawn`, `chat`). This is the layer users build on; probes/scripts below it use raw `GameClient`.
+- Movement is intentionally NOT in this layer yet (next milestone). `research/MOVEMENT.md` has the cracked model (client-declared positions at walk speed ~4 u/s are trusted; our old 30 u/s was why it failed).
 
 ## Critical context
 
